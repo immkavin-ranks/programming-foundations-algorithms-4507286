@@ -1,17 +1,21 @@
 # Example file for Programming Foundations: Algorithms by Joe Marini
 # Bubble sort algorithm
 
-
+# improve bubble sort using swapped state
 def bubbleSort(dataset):
     # start with the array length and decrement each time
     for i in range(len(dataset)-1, 0, -1):
         # examine each item pair
+        swapped = False
         for j in range(i):
             # swap items if needed
             if dataset[j] > dataset[j+1]:
                 temp = dataset[j]
                 dataset[j] = dataset[j+1]
                 dataset[j+1] = temp
+                swapped = True
+
+        if not swapped: break
 
         print("Current state: ", dataset)
 
